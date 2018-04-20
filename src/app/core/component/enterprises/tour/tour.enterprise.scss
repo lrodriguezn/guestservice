@@ -1,0 +1,132 @@
+.ios, .md {
+  enterprisetourpage {
+		ion-card.blurred-title-card {
+		position: relative;
+
+		.card-image {
+			width: 100%;
+			height: 70vw;
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+
+		.card-title-background,
+		.card-title {
+			position: absolute;
+			width: 100%;
+			height: 50px;
+			bottom: 0;
+			left: 0;
+			margin: 0;
+			overflow: hidden;
+		}
+
+		.card-title-background span{
+			position: absolute;
+			width: 100%;
+			height: 50vw;
+			bottom: 0;
+			left: 0;
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
+			-webkit-filter: blur(5px);
+			-moz-filter: blur(5px);
+			-o-filter: blur(5px);
+			-ms-filter: blur(5px);
+			filter: blur(5px);
+		}
+
+		.card-title {
+			padding: 10px;
+			display: -ms-flexbox;
+			display: -webkit-flex;
+			display: flex;
+			-webkit-flex-direction: column;
+			-ms-flex-direction: column;
+			flex-direction: column;
+			-webkit-flex-wrap: nowrap;
+			-ms-flex-wrap: nowrap;
+			flex-wrap: nowrap;
+			-webkit-justify-content: center;
+			-ms-flex-pack: center;
+			justify-content: center;
+			-webkit-align-content: stretch;
+			-ms-flex-line-pack: stretch;
+			align-content: stretch;
+			-webkit-align-items: flex-start;
+			-ms-flex-align: start;
+			align-items: flex-start;
+
+			p {
+			line-height: 100%;
+			font-size: 1em;
+			font-weight: normal;
+			width: 100%;
+			color: #fff !important;
+			}
+		}
+		}
+
+		.titulo{
+			font-weight:bold;
+			text-align: justify;
+			margin: 0px;
+		}
+
+		.parrafo{
+			font-size: 15px;
+			text-align: justify;
+			margin: 0px;
+		}
+
+		ion-content ion-col{
+			font-size: 25px;
+			margin:0px; 
+			padding-left:15px; 
+		}
+
+  }
+}
+
+/*
+.ios, .md {
+  enterprisesdetail {
+      .icons {
+          background-color: #fff;
+          border: 1px solid #7f8c8d;
+          color: #7f8c8d;
+          margin: 0;
+          font-size: 0.9em;
+      }
+      
+      .name {
+          margin: 0;
+      }
+      
+      .handle {
+          margin: 0;
+      }
+      
+      .status {
+          white-space: normal;
+          color: #000;
+          margin-top: 5px;
+      }
+      
+      .item {
+          align-items: baseline;
+      }
+      
+      .button-container {
+          align-self: flex-end;
+          text-align: right;
+      }  
+
+      img{
+        height: auto;
+      }
+  }
+}
+*/

@@ -1,0 +1,46 @@
+<ion-card padding>
+    <ion-thumbnail item-left>
+        <img src="{{producto.urlImage}}"/>
+    </ion-thumbnail>
+    <ion-card-title style="font-weight: bold;">
+        {{producto.nombre}}
+    </ion-card-title>
+    <p>Precio: {{producto.precio}}</p>
+
+
+    <form #productosForm="ngForm" novalidate (ngSubmit)="AddProducto(productosForm)">
+        <ion-row style="margin: 0px;">
+            <ion-col width-60>
+                <ion-item style="padding: 0; margin:0 0 5 0; font-size: 14px;">
+                    <ion-label>{{'roomservice_producto_cant' | translate}}:</ion-label>
+                    <ion-input type="number" border [(ngModel)]="cantidad" name="cant" #cant="ngModel" required min="1" max="100"></ion-input>
+                </ion-item>
+            </ion-col>
+
+            <ion-col width-40>
+                <button ion-button block color="facebook" type="submit">
+                    {{'roomservice_product_add' | translate}}
+                </button>  
+            </ion-col>
+            
+        </ion-row>
+
+        <ion-row style="margin: 0px; padding: 0">
+
+            <ion-col style="margin: 0px; padding: 0">
+                <ion-item style="margin: 0px; padding: 0" style="margin: 0px; padding: 0;font-size: 14px">
+                    <ion-label>Agregar Comentarios</ion-label>
+                    <ion-toggle [(ngModel)]="togglecomentarios" name="togglecoment" #togglecoment="ngModel"></ion-toggle>
+                </ion-item>
+
+                <ion-item style="margin: 0px; padding: 0" *ngIf="togglecomentarios" style="margin: 0px; padding: 0;font-size: 14px">
+                    <ion-label stacked>{{'roomservice_producto_coment' | translate}}</ion-label>
+                    <ion-textarea [(ngModel)]="comentarios" name="coment" #coment="ngModel" rows="3" ></ion-textarea>
+                </ion-item>
+                
+            </ion-col>
+        </ion-row>
+
+    </form>
+
+</ion-card>

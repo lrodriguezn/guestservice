@@ -1,0 +1,31 @@
+<ion-header>
+
+	<ion-navbar>
+		<button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+		<ion-title>{{'reclamos_title' | translate}}</ion-title>
+	</ion-navbar>
+
+</ion-header>
+
+<ion-content>
+	<div class="logo">
+		<img src="assets/img/logoapp.png">
+	</div>
+
+	<form #submitForm="ngForm" novalidate (ngSubmit)="submit(submitForm)">
+		<ion-item>
+			<ion-label stacked color="primary">{{'reclamos_message' | translate}}</ion-label>
+			<ion-textarea [(ngModel)]="supportMessage" name="supportQuestion" #supportQuestion="ngModel" rows="6" required></ion-textarea>
+		</ion-item>
+
+		<p ion-text [hidden]="supportQuestion.valid || submitted === false" color="danger" padding-left>
+			{{'reclamos_val_message' | translate}}
+		</p>
+
+		<div padding>
+			<button ion-button block type="submit">{{'reclamos_submit' | translate}}</button>
+		</div>
+	</form>
+</ion-content>

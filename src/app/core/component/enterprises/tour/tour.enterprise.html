@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar no-border-bottom>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{'enterprise_myclub' | translate}}</ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <h5 style="margin: 0px; padding: 10px 0px 0px 15px">{{enterprise.name}}</h5>
+    <div>
+        <ion-slides pager="true" loop="false" autoplay="false" index="1">
+            <ion-slide *ngFor="let image of enterprise.gallery">
+                <ion-card class="blurred-title-card">
+                    <div class="card-image" [style.background-image]="'url(' + image.image + ')'" ></div>
+                </ion-card>
+                <div style="margin-bottom: 20px; padding: 10px;">
+                    <p class="titulo">{{image.name}}</p>
+                    <p class="parrafo">{{image.description}}</p>
+                </div>
+            </ion-slide>
+        </ion-slides>
+    </div>
+
+    <ion-footer>
+        <ion-row >
+            <ion-col width-20>
+                <a href="tel:{{enterprise.mobile}}">
+                    <ion-icon name="call" item-left color="secondary"></ion-icon>
+                </a>                            
+            </ion-col>
+            <ion-col width-20>
+                <a href="mailto:{{enterprise.email}}">
+                    <ion-icon name="mail" item-left color="primary"></ion-icon>
+                </a>
+            </ion-col>
+            <ion-col width-20>
+                <a href="http://www.zeustecnologia.com">
+                    <ion-icon ios="logo-facebook" md="logo-facebook" item-left color="facebook"></ion-icon>
+                </a>
+            </ion-col>
+            <ion-col width-20>
+                <a href="mailto:{{enterprise.email}}">
+                    <ion-icon ios="logo-twitter" md="logo-twitter" item-left color="twitter"></ion-icon>
+                </a>
+            </ion-col>
+            <ion-col width-20>
+                <a (click)="EditMap()" >
+                    <ion-icon  name="map" item-left color="orange" ></ion-icon>
+                </a>                
+            </ion-col> 
+        </ion-row>
+    </ion-footer>
+</ion-content>

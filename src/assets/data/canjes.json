@@ -1,0 +1,30 @@
+{"result":[ 
+	{	"code": "000001",
+		"club": {"code":"001","name":"Club Mesa de Yeguas"},
+        "fechainicial":"20170228",
+        "fechafinal":"20170315",
+        "estado":"por autorizar",
+        "detalles":"",
+        "detallesauto":"",
+        "socios":[{"id":"73559909", "noaccion":"N001", "name":"Sofia Rodriguez Mora"}, {"id":"999999", "noaccion":"N002", "name":"Sebastian Rodriguez Mora"}, {"id":"45523840", "noaccion":"N003", "name":"Yulissa Mora Gonzalez"}  ]
+	},
+	{	"code": "000002",
+		"club": {"code":"002","name":"Club Campestre de Cali"},
+        "fechainicial":"20170405",
+        "fechafinal":"20170420",
+        "estado":"autorizado",
+        "detalles":"",
+        "detallesauto":"",
+        "socios":[{"id":"73559909", "noaccion":"N001", "name":"Sofia Rodriguez Mora"}  ]
+	},
+	{	"code": "000003",
+		"club": {"code":"003","name":"Karibana"},
+        "fechainicial":"20170601",
+        "fechafinal":"20170605",
+        "estado":"rechazado",
+        "detalles":"",
+        "detallesauto":"",
+        "socios":[{"id":"73559909", "noaccion":"N001", "name":"Sofia Rodriguez Mora"}  ]
+	}    
+]
+}

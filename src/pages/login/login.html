@@ -1,0 +1,53 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+		<ion-title>Login</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content class="vertical-align-content">
+
+	<div>
+		<img src="assets/img/logoapp.png">
+	</div>
+
+    <form #loginForm="ngForm" novalidate (ngSubmit)="onLogin(loginForm)">
+      <ion-list>
+        <ion-item>
+          <ion-icon name="person" item-left primary></ion-icon>
+          <ion-label floating>{{'login_Email' | translate}}</ion-label>
+          <ion-input [(ngModel)]="login.username" name="username" type="text" #username="ngModel" spellcheck="false" autocapitalize="off" required>
+          </ion-input>
+        </ion-item>
+                
+        <ion-item>
+          <ion-icon name="unlock" item-left></ion-icon>
+          <ion-label floating>{{'login_Password' | translate}}</ion-label>
+          <ion-input [(ngModel)]="login.password" name="password" type="password" #password="ngModel" required>
+          </ion-input>
+        </ion-item>
+
+        <button ion-button color="facebook" type="submit" style="margin: 20px 0px 0px 10px">
+          <!--<ion-icon name="log-in"></ion-icon>-->
+          {{'menu_Login' | translate}}
+        </button>          
+
+        <button ion-button color="royal" (click)="onSignup()" style="margin: 20px 0px 0px 10px">
+          <!--<ion-icon name="person-add"></ion-icon>-->
+          {{'menu_Signup' | translate}}
+        </button>  
+
+<!--      <ion-row responsive-sm>
+        <ion-col>
+        </ion-col>
+        <ion-col>
+
+        </ion-col>
+      </ion-row>-->
+
+        <!--<p  style="margin: 10px 10px">Recordar Contraseña</p>-->
+      </ion-list>
+    </form>
+</ion-content>

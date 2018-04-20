@@ -1,0 +1,35 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+		<ion-title>{{'roomservice_product' | translate}}</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+				
+        <ion-list-header>
+          <ion-row >
+              <ion-col>
+                  	{{grupo.name}}
+              </ion-col>
+
+              <ion-col width-33>
+                  <button ion-button end small color="secondary" (click)="presentPedidoModal()">
+                    <ion-icon name="cart" style="margin:0 3px; font-size: 16px;"></ion-icon>
+                    {{'roomservice_verpedido' | translate}}
+                  </button>
+              </ion-col>
+              
+          </ion-row>
+        </ion-list-header>      
+
+        <z-producto *ngFor="let producto of productos"
+          [producto]="producto"
+          (add)="onAddProducto(producto)"
+          >
+        </z-producto>  
+    </ion-list> 
+</ion-content>

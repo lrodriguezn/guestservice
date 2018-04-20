@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-navbar no-border-bottom>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    
+    <ion-title *ngIf="viewTour">{{'menu_enterprise' | translate}}</ion-title>
+
+    <ion-segment [(ngModel)]="segmentvalue">
+      <ion-segment-button value="userenterprises" > <!--(ionSelect)="selectedFriends()" -->
+        {{'enterprise_myclub' | translate}}
+      </ion-segment-button>
+      <ion-segment-button value="enterprises">
+        {{'enterprise_all' | translate}}
+      </ion-segment-button>
+    </ion-segment>
+
+    <ion-buttons end>
+      <button ion-button (click)="presentFilter()">
+        <span>Continuar</span>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+
+  <ion-toolbar no-border-top>
+    <ion-searchbar color="primary"
+                    placeholder="{{'enterprise_searchbar' | translate}}" 
+                    [(ngModel)]="searchbartext"
+                    (ionInput)="searchBar($event)">
+    </ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-list *ngIf="segmentvalue=='enterprises'">
+        <z-enterprise *ngFor="let enterprise of enterprises"
+          [enterprise]="enterprise"
+          viewcard=true
+          [buttons]="buttonsviewcard"
+          (buttonclick)="Enterpriseclick($event)"
+          >
+        </z-enterprise>  
+    </ion-list>
+
+    <ion-list *ngIf="segmentvalue=='userenterprises'">
+        <z-enterprise *ngFor="let enterprise of enterprises_Localstore"
+          [enterprise]="enterprise"
+          viewcard=false
+          [buttons]="buttonslocal"
+          (buttonclick)="Enterpriseclick($event)"
+          >
+        </z-enterprise>  
+    </ion-list>
+
+</ion-content>

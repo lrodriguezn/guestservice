@@ -1,0 +1,126 @@
+<ion-header>
+	<ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{'eventos_title' | translate}}</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+
+	<ion-navbar>
+        <ion-segment [(ngModel)]="segmentvalue">
+            <ion-segment-button value="mes">
+                {{'eventos_mes' | translate}}
+            </ion-segment-button>
+            <ion-segment-button value="all">
+                {{'estadocuenta_all' | translate}}
+            </ion-segment-button>
+        </ion-segment>   
+	</ion-navbar>    
+
+    <div *ngIf="segmentvalue=='mes'">
+        <ion-searchbar color="primary"
+                        placeholder="Buscar evento">
+        </ion-searchbar>
+        
+        <ion-list>
+
+            <!--evento y video1-->
+            <ion-card>
+               <!-- <video [src]="url" controls ></video>-->
+                <iframe [src]="url" frameborder="0" style="width: 100%;"></iframe>
+
+                <ion-card-content style="text-align: center;">
+                    <ion-card-title style="font-weight: bold;">
+                        Estamos Trabajando para su Comodidad
+                    </ion-card-title>
+                    <p  style="text-align: center;">Zeus Tecnologia nuestro aliado TIC.</p>
+                </ion-card-content>
+            </ion-card>
+
+            <!--evento1-->
+            <ion-card>
+                <img src="assets/images/eventos/portadaboda.jpg"/>
+                <ion-card-content style="text-align: center;">
+                    <ion-card-title style="font-weight: bold;">
+                        Maria y Antonio
+                    </ion-card-title>
+                    <p  style="text-align: center;">Con la bendición de Dios y nuestros padres</p>
+                    <p style="text-align: center;font-weight: bold;">María del Mar García - Oscar Fernández</p>
+                    <p style="text-align: center;font-weight: bold;">y</p>
+                    <p style="text-align: center;font-weight: bold;">Carmen Zamora - Antonio Gómez</p>
+                    <p style="text-align: justify;">
+                       Nos uniremos mediante el Sacramento del Matrimonio y nos complace invitarles a la ceremonia religiosa que tendrá lugar el próximo <span style="font-weight: bold;">27 de Mayo a las 13,00</span> horas en la Iglesia de Santo Domingo. 
+                    </p>
+                </ion-card-content>
+            </ion-card>
+
+
+            <!--evento2-->
+            <ion-card>
+                <img src="assets/images/eventos/golf.jpg"/>
+                <ion-card-content style="text-align: center;">
+                    <ion-card-title style="font-weight: bold;">
+                        V Torneo de Golf Benefico Anual
+                    </ion-card-title>
+                    <p  style="text-align: center;">Sabado 1 de Abril del 2017</p>
+                    <p  style="text-align: center;">9:00 AM - 4:00 PM</p>
+                    <p style="text-align: center;font-weight: bold;">Entrega de Premios y Cena 8:00 PM Casa Club</p>
+                </ion-card-content>
+            </ion-card>
+
+            <!--evento3-->
+            <ion-card>
+                <img src="assets/images/eventos/fiesta.jpg"/>
+                <ion-card-content style="text-align: center;">
+                    <ion-card-title style="font-weight: bold;">
+                        Invitacion a Fiesta de Fin de Año
+                    </ion-card-title>
+                    <p  style="text-align: center;">Sabado 12 de Diciembre del 2017</p>
+                    <p  style="text-align: center;">7:00 PM - 5:00 AM</p>
+                </ion-card-content>
+            </ion-card>
+
+            <!--evento4-->
+            <ion-card>
+                <img src="assets/images/eventos/feliznavidad.jpg"/>
+                <ion-card-content style="text-align: center;">
+                    <ion-card-title style="font-weight: bold;">
+                        Feliz Navidad y Prospero Año Nuevo
+                    </ion-card-title>
+                    <p>El club xxxx les desea una feliz navidad y un prospero año a todos sus socios</p>
+                </ion-card-content>
+            </ion-card>
+
+        </ion-list> 
+        
+    </div>    
+
+    <div *ngIf="segmentvalue=='all'">
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label stacked>{{'canjes_date1' | translate}}</ion-label>
+                    <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="fechainicial"></ion-datetime>
+                </ion-item>
+                
+            </ion-col>
+
+            <ion-col>
+                <ion-item>
+                    <ion-label stacked>{{'canjes_date2' | translate}}</ion-label>
+                    <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="fechafinal"></ion-datetime>
+                </ion-item>
+            </ion-col>
+
+            <ion-col width-20 center>
+                <ion-icon name="search" style="font-size: 30px;"></ion-icon>
+            </ion-col>
+            
+        </ion-row>
+        
+    </div>    
+
+</ion-content>

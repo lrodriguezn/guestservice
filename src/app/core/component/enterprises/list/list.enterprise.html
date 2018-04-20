@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar no-border-bottom>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    
+    <ion-title>{{'menu_enterprise' | translate}}</ion-title>
+  </ion-navbar>
+
+  <ion-toolbar no-border-top>
+    <ion-searchbar color="primary"
+                    placeholder="{{'enterprise_searchbar' | translate}}" 
+                    [(ngModel)]="searchbartext"
+                    (ionInput)="searchBar($event)">
+    </ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <z-enterprise *ngFor="let enterprise of enterprises"
+          [enterprise]="enterprise"
+          viewcard=true
+          [buttons]="buttons"
+          (buttonclick)="Enterpriseclick($event)"
+          >
+        </z-enterprise>  
+    </ion-list>
+</ion-content>

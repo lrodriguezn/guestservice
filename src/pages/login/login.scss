@@ -1,0 +1,29 @@
+// Styles for all of the user pages:
+// Login, Signup, Support
+
+page-login {
+
+    .vertical-align-content > *
+    {
+        //background-image:url('.././assets/img/logobackground.png');
+/*        display: flex!important;
+        align-content: center!important;
+        align-items: center!important;
+        background-position: center;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;*/
+    }
+
+    .item.item-input {
+        //background-color: transparent;
+        //border-radius: 0px;
+    }    
+
+    ion-item,ion-list,form,form >* {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+ 
+}

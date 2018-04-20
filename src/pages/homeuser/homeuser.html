@@ -1,0 +1,66 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+     		 <ion-icon name="menu"></ion-icon>
+    	</button>
+		<ion-title>{{'menu_titleapp' | translate}}</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content class="vertical-align-content card-background-page">
+	<ion-item>
+		<p ion-text color="secondary" style="text-align: center; font-size: 30px; font-weight: bold" >HAB. 604</p>
+	</ion-item>
+		
+	<ion-row wrap>
+			<ion-col width-20 (click)="onRoomService()">
+				<img src="assets/img/roomservice.jpg"/>
+				<p>{{'mnu_roomservice' | translate}}</p>
+			</ion-col>
+
+			<ion-col width-20 (click)="onEstadoCuenta()">
+				<img src="assets/img/imgestadocuenta.jpg"/>
+				<p>{{'mnu_estadocuenta' | translate}}</p>
+			</ion-col>
+
+			<ion-col width-20 (click)="onllamadas()">
+				<img src="assets/img/llamadas.jpg"/>
+				<p>{{'mnu_llamadas' | translate}}</p>
+			</ion-col>
+
+			<ion-col width-20 (click)="onMensajes()">
+				<img src="assets/img/mensajes.png"/>
+				<p>{{'mnu_mensajes' | translate}}</p>
+			</ion-col>
+
+			<ion-col width-20 (click)="onUbicacion()">
+				<img src="assets/img/ubicacion.png"/>
+				<p>{{'mnu_ubicacion' | translate}}</p>
+			</ion-col>
+
+			<ion-col width-20 (click)="onReclamos()">
+				<img src="assets/img/quejas.jpg"/>
+				<p>{{'mnu_quejas' | translate}}</p>
+			</ion-col>
+
+			<ion-col width-20 (click)="onAtencionCliente()">
+				<img src="assets/img/atencioncliente.jpg"/>
+				<p>{{'mnu_atencioncliente' | translate}}</p>
+			</ion-col>
+
+			<ion-col width-20 (click)="onZeusReservas()">
+				<img src="assets/img/imgreservas.jpg"/>
+				<p>{{'mnu_reservaszeus' | translate}}</p>
+			</ion-col>
+
+			<ion-col width-20 (click)="onEmpresa()">
+				<img src="assets/img/img_empresa.jpg"/>
+				<p>{{'mnu_empresa' | translate}}</p>
+			</ion-col>
+
+			<ion-col width-20 (click)="onSugerencias()">
+				<img src="assets/img/imgsugerencias.jpg"/>
+				<p>{{'sugerencias_title' | translate}}</p>
+			</ion-col>
+	</ion-row>
+</ion-content>

@@ -1,0 +1,42 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+		<ion-title>{{'menu_titleapp' | translate}}</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content class="vertical-align-content">
+	<ion-row wrap>
+		<ion-col width-25 (click)="onLogin()">
+			 <img src="assets/img/imglogin.jpg">
+			 <p>{{'menu_Login' | translate}}</p>
+		</ion-col>
+
+		<ion-col width-25 (click)="onSignup()">
+			 <img src="assets/img/imgnewuser.jpg">
+			 <p>{{'menu_Signup' | translate}}</p>
+		</ion-col>
+
+		<ion-col width-25 (click)="onEnterprisesTour()">
+			 <img src="assets/img/img_tutorial01.jpg">
+			 <p>{{'menu_enterprise' | translate}}</p>
+		</ion-col>
+		
+		<ion-col width-25 (click)="onLanguage()">
+			 <img src="assets/img/imglanguage.jpg">
+			 <p>{{'menu_Language' | translate}}</p>
+		</ion-col>
+
+		<ion-col width-25 (click)="onSupport()">
+			 <img src="assets/img/imgsupport2.jpg">
+			 <p>{{'menu_Support' | translate}}</p>
+		</ion-col>
+
+		<ion-col width-25 (click)="onTutorial()">
+			 <img src="assets/img/imgtutorial.jpg">
+			 <p>{{'menu_goTutorial' | translate}}</p>
+		</ion-col>
+	</ion-row>
+</ion-content>

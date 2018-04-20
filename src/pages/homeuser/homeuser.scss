@@ -1,0 +1,33 @@
+// Styles for all of the user pages:
+// Login, Signup, Support
+
+page-homeuser {
+
+    .vertical-align-content > *
+    {
+        background-image:url('.././assets/img/logobackground.png');
+        background-position: center;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        display: flex!important;
+        align-items: center!important;
+        flex-direction: column;  /* make main axis vertical */
+        justify-content: center; /* center items vertically, in this case */
+        
+    }
+
+    ion-col{
+        img{
+            width: 100%;
+           // height: 90%;
+        }
+        p{
+            margin:0;
+            padding:0; 
+            color:#886aea;
+            //font-weight: bold;
+            font-size: 12px;
+            text-align: center
+        }
+    }
+}

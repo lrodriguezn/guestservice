@@ -1,0 +1,62 @@
+<!--<ion-card nopadding>-->
+    <ion-list>
+        <ion-item class="titulo">
+            <ion-row>
+                <ion-col width-80>
+                    {{'roomservice_productos' | translate}}
+                </ion-col>
+                <ion-col width-20 style="text-align: right">
+                    {{'roomservice_cantidad' | translate}}
+                </ion-col>
+            </ion-row>
+        </ion-item>
+        
+         <ion-item-sliding *ngFor="let producto of pedido.productos">
+            <ion-item>
+                <ion-grid no-padding>
+                    <ion-row>
+                        <ion-col width-80>
+                            {{producto.nombre}}
+                        </ion-col>
+                        <ion-col width-20 style="text-align: right">
+                            {{producto.cantidad}}
+                        </ion-col>
+                    </ion-row>
+                    <ion-row *ngIf="producto.comentariosvisible">
+                        <ion-col >
+                        <ion-textarea ngModel="{{producto.comentariospedido}}" rows="2" style="width: 100%"></ion-textarea>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+                
+            </ion-item>
+
+            <ion-item-options side="right">
+                <button ion-button color="primary" style="font-size: 12px;" (click)="producto.comentariosvisible=!producto.comentariosvisible">
+                    <ion-icon name="chatboxes"></ion-icon>
+                    {{'roomservice_producto_coment' | translate}}
+                </button>
+                
+                <button ion-button color="danger" style="font-size: 14px;">
+                    <ion-icon name="trash"></ion-icon>
+                    {{'roomservice_producto_delete' | translate}}
+                </button>
+            </ion-item-options>            
+        </ion-item-sliding>
+
+        <div *ngIf="enableSend()">
+            <ion-item style="margin:20px 5px;"> </ion-item>
+            <ion-item>
+                <button ion-button block color="facebook">
+                    {{'roomservice_send' | translate}}
+                </button>			
+
+                <button ion-button block color="danger">
+                    {{'roomservice_cancel' | translate}}
+                </button>			
+            </ion-item>
+            <p style="margin: 15px;">Gracias por usar nuestro servicio de Room serive Mobile. Verifique los productos y su pedido sera entregado en máximo 20 minutos</p>
+        </div>
+
+    </ion-list> 
+<!--</ion-card>-->

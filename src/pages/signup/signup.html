@@ -1,0 +1,64 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+		<ion-title>{{'login_New' | translate}}</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<!--<ion-content class="no-scroll"-->
+<ion-content class="vertical-align-content">
+
+<!--	<div class="logo">
+		<img src="assets/img/logoapp.png">
+	</div>-->
+    
+    <form #loginForm="ngForm" novalidate (ngSubmit)="onNewLogin(loginForm)">
+      <ion-list inset>
+
+        <ion-item>
+          <ion-icon name="mail" item-left primary></ion-icon>
+          <ion-label floating>{{'login_Email' | translate}}</ion-label>
+          <ion-input [(ngModel)]="login.username" name="username" type="text" #username="ngModel" spellcheck="false" autocapitalize="off" >
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon name="" item-left primary></ion-icon>
+          <ion-label floating>{{'login_FirstName' | translate}}</ion-label>
+          <ion-input [(ngModel)]="login.firstname" name="username" type="text" #firstname="ngModel" spellcheck="false" autocapitalize="off">
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon name="" item-left primary></ion-icon>
+          <ion-label floating>{{'login_LastName' | translate}}</ion-label>
+          <ion-input [(ngModel)]="login.lastname" name="username" type="text" #lastname="ngModel" spellcheck="false" autocapitalize="off">
+          </ion-input>
+        </ion-item>
+       
+        <ion-item>
+          <ion-icon name="unlock" item-left></ion-icon>
+          <ion-label floating>{{'login_Password' | translate}}</ion-label>
+          <ion-input [(ngModel)]="login.password" name="password" type="password" #password="ngModel">
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon name="" item-left></ion-icon>
+          <ion-label floating>{{'login_Confirpassword' | translate}}</ion-label>
+          <ion-input [(ngModel)]="login.confirpassword" name="confirpassword" type="password" #confirpassword="ngModel">
+          </ion-input>
+        </ion-item>
+        
+        <button ion-button block color="facebook" type="submit">
+          {{'login_New' | translate}}
+        </button>          
+
+        <button ion-button block item-left color="danger" (click)="onCancel()">
+          {{'login_Cancel' | translate}}
+        </button>     
+      </ion-list>
+    </form>
+</ion-content> 

@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar no-border-bottom>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{'enterprise_myclub' | translate}}</ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-row>
+        <ion-col width-100>
+                <ion-slides pager="true" loop="false" autoplay="false" index="1">
+                    <ion-slide *ngFor="let image of enterprise.gallery">
+                        <ion-card class="blurred-title-card" >
+                            <div class="card-image" [style.background-image]="'url(' + image.image + ')'" ></div>
+                        </ion-card>
+                    </ion-slide>
+                </ion-slides>
+        </ion-col>
+    </ion-row>    
+
+    <ion-list>
+        <a ion-item>
+            <ion-icon name="pin" item-left></ion-icon>
+            <p> {{'enterprise_address' | translate}}</p>
+            <p class="parrafo">{{enterprise.city + ',' +  enterprise.country}} </p>
+        </a>
+        <a href="tel:{{enterprise.tel}}" ion-item>
+            <ion-icon name="call" item-left></ion-icon>
+            <p>{{'enterprise_teloffice' | translate}}</p>
+            <p class="parrafo">{{enterprise.tel}}</p>
+        </a>
+        <a href="tel:{{enterprise.mobile}}" ion-item>
+            <ion-icon name="call" item-left></ion-icon>
+            <p>{{'enterprise_telmobil' | translate}}</p>
+            <p class="parrafo">{{enterprise.mobile}}</p>
+        </a>
+        <a href="mailto:{{enterprise.email}}" ion-item>
+            <ion-icon name="mail" item-left></ion-icon>
+            <p>{{'enterprise_email' | translate}}</p>
+            <p class="parrafo">{{enterprise.email}}</p>
+        </a>
+        <a ion-item (click)="EditMap()">
+            <p>{{'enterprise_mapa' | translate}}</p>
+            <ion-icon name="map" item-left></ion-icon>
+            <p class="parrafo">Mapa</p>
+        </a>          
+    </ion-list>
+    
+</ion-content>

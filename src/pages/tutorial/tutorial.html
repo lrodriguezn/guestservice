@@ -1,0 +1,59 @@
+<ion-header no-border>
+  <ion-navbar>
+    <ion-buttons end *ngIf="showSkip">
+      <button ion-button (click)="startApp()" color="primary">{{'tutorial_skip' | translate}}</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce>
+  <ion-slides (ionSlideWillChange)="onSlideChangeStart($event)" pager>
+
+    <ion-slide>
+      <img src="assets/img/img_tutorial01.jpg" class="slide-image"/>
+      <h2 class="slide-title">
+       {{'tutorial_welcome' | translate}} <span>Zeus Guest Service</span> <span class="mobile">Mobile</span>
+      </h2>
+      <p>
+        Zeus Guest Service <b>mobile</b>, permite a los huesped del hotel solicitar en linea los servicio que comunmente lo realiza desde recepción, por ejemplo, RoomService, Servicio de Lavanderia, Servicio de TV por Cable, consultar las llamdas realizadas, consultar su estado de cuenta, etc.
+      </p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/img/img_tutorial02.jpg" class="slide-image"/>
+      <h2 class="slide-title" >
+        {{'tutorial_one' | translate}} <span>Zeus Guest Service</span> <span class="mobile">Mobile</span>
+      </h2>
+      <p>Si es la primera vez que utiliza Zeus Guest Service puede navegar y conover los hotels disponibles en la plataforma como usuario invitado. Utilice la opción de creación de usuarios para tener acceso a todas las funcionalidad dentro de su hotel</p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/img/img_tutorial07.png" class="slide-image"/>
+      <h2 class="slide-title" >
+        {{'tutorial_clubes' | translate}}
+      </h2>
+      <p>Conozca los hoteles disponibles en la plataforma y busque su hotel.</p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/img/img_tutorial03.png" class="slide-image"/>
+      <h2 class="slide-title">
+        Zeus® Tecnología S.A.
+        <span class="mobile">{{'tutorial_zeus' | translate}}</span>
+      </h2>
+      <p> Empresa Colombiana desarrolladora y comercializadora de Soluciones Integrales para la gestión de su negocio. 
+Ofrecemos Soluciones para Hoteles, Clubes, Restaurantes, Agencias de Viajes, Salud, Aeropuertos, Inmobiliarias completamente integradas a nuestras soluciones ERP Contabilidad, Inventarios, Nómina, Reloj y Activos Fijos. 
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/img/logoapp.png" class="slide-image"/>
+      <h2 class="slide-title">{{'tutorial_end' | translate}}</h2>
+      <button ion-button icon-right large clear (click)="startApp()">
+        {{'tutorial_continue' | translate}}
+        <ion-icon name="arrow-forward"></ion-icon>
+      </button>
+    </ion-slide>
+    
+  </ion-slides>
+  
+</ion-content>

@@ -1,0 +1,98 @@
+/*
+page-eventoscontainer{
+
+    ion-avatar img  {     
+        min-width: 60px;
+        min-height: 60px;
+        border-radius: 50%;
+
+    }    
+
+    .item {
+        min-height: 0.5em; 
+        //margin: 0px;
+        //padding: 0px;
+    }
+
+    .titulo{
+        font-weight:bold;
+    }
+
+    .parrafo{
+        font-size: 12px;
+    }
+    
+    ion-card.blurred-title-card {
+            position: relative;
+            margin: 0px;
+            padding: 2px;
+            width: 100%;
+
+        .card-image {
+            max-width: 100%;
+            width: 100%;
+            height: 60vw;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .card-title-background,
+        .card-title {
+            position: absolute;
+            width: 100%;
+            height: 50px;
+            bottom: 0;
+            left: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .card-title-background span{
+            position: absolute;
+            width: 100%;
+            height: 50vw;
+            bottom: 0;
+            left: 0;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            -webkit-filter: blur(5px);
+            -moz-filter: blur(5px);
+            -o-filter: blur(5px);
+            -ms-filter: blur(5px);
+            filter: blur(5px);
+        }
+
+        .card-title {
+            padding: 10px;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-flex-wrap: nowrap;
+            -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-align-content: stretch;
+            -ms-flex-line-pack: stretch;
+            align-content: stretch;
+            -webkit-align-items: flex-start;
+            -ms-flex-align: start;
+            align-items: flex-start;
+
+            p {
+            line-height: 100%;
+            font-size: 1em;
+            font-weight: normal;
+            width: 100%;
+            color: #fff !important;
+            }
+        }
+    }
+}
+*/

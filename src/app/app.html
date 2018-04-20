@@ -1,0 +1,82 @@
+<ion-split-pane>
+  <ion-menu id="loggedOutMenu" [content]="content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content class="outer-content">
+
+      <ion-list *ngFor="let p of appMenu_loggedOutPage">
+        <ion-list-header>
+          {{p.key_translate | translate}}
+        </ion-list-header>
+
+        <button ion-item detail-none menuClose *ngFor="let m of getmenu(false,p.title)" (click)="openPage(m)">
+          <ion-icon item-left [name]="m.icon" [color]="isActive(m)"></ion-icon>
+          {{m.key_translate | translate}}
+        </button>
+      </ion-list>  
+
+      <ion-list>
+        <ion-list-header>
+          {{'menu_Language' | translate}}
+        </ion-list-header>
+        <ion-item (click)="changeLanguage()">
+          <ion-icon item-left name="globe" color="facebook"></ion-icon>
+          {{getLanguageName()}}
+        </ion-item>
+      </ion-list>  
+
+    </ion-content>
+
+  </ion-menu>
+
+  <ion-menu id="loggedInMenu" [content]="content">
+    <ion-header  >
+      <ion-toolbar>
+        <ion-row >
+          <ion-col width-20 style="margin: 0; padding: 0;">
+              <ion-avatar item-left>
+                <img src="assets/img/imguser.jpg">
+              </ion-avatar>
+          </ion-col>
+          <ion-col>
+            <p style="font-size: 12px; color:black; font-weight: bold">{{username}}</p>
+            <p style="font-size: 12px;color:black">{{enterprise.name}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content class="outer-content">
+
+      <ion-list *ngFor="let p of appMenu_loggedInPage">
+        <ion-list-header>
+          {{p.key_translate | translate}}
+        </ion-list-header>
+
+        <button ion-item detail-none menuClose *ngFor="let m of getmenu(true,p.title)" (click)="openPage(m)">
+          <ion-icon item-left [name]="m.icon" [color]="isActive(m)"></ion-icon>
+          {{m.key_translate | translate}}
+        </button>
+      </ion-list>  
+
+      <ion-list>
+        <ion-list-header>
+          {{'menu_Language' | translate}}
+        </ion-list-header>
+        <ion-item (click)="changeLanguage()">
+          <ion-icon item-left name="globe" color="facebook"></ion-icon>
+          {{getLanguageName()}}
+        </ion-item>
+      </ion-list>  
+
+    </ion-content>
+
+  </ion-menu>
+  <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+  <ion-nav [root]="rootPage" #content swipeBackEnabled="false" main></ion-nav>
+</ion-split-pane>
+

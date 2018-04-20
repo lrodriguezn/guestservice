@@ -1,0 +1,105 @@
+<ion-header>
+	<ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{'roomservice_title' | translate}}</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+
+	<ion-navbar>
+        <ion-segment [(ngModel)]="segmentvalue">
+            <ion-segment-button value="menu">
+                {{'roomservice_menu' | translate}}
+            </ion-segment-button>
+            <ion-segment-button value="orden" >
+                {{'roomservice_orden' | translate}}
+            </ion-segment-button>
+            <ion-segment-button value="historden" >
+                {{'roomservice_historden' | translate}}
+            </ion-segment-button>
+        </ion-segment>    
+	</ion-navbar> 
+
+    <div *ngIf="segmentvalue=='menu'">
+        <ion-searchbar color="primary"
+                        placeholder="Buscar producto">
+        </ion-searchbar>
+        
+		<ion-row wrap>
+				<ion-col width-25 (click)="onDetail('desayunos','Desayunos')">
+					<img src="assets/img/roomservice_desayunos.jpg"/>
+					<p>Desayunos</p>
+				</ion-col>
+
+				<ion-col width-25 (click)="onDetail('ensaladas','Ensaladas')">
+					<img src="assets/img/roomservice_ensaladas.jpg"/>
+					<p>Ensaladas</p>
+				</ion-col>
+
+				<ion-col width-25 (click)="onDetail('sopas','Sopas y Cremas')">
+					<img src="assets/img/roomservice_sopas.jpg"/>
+					<p>Sopas y Cremas</p>
+				</ion-col>
+
+				<ion-col width-25 (click)="onDetail('pastas','Pastas')">
+					<img src="assets/img/roomservice_pastas.jpg"/>
+					<p>Pastas</p>
+				</ion-col>
+
+				<ion-col width-25 (click)="onDetail('carnes','carnes (Rojas, Pollo, Cerdo)')">
+					<img src="assets/img/roomservice_carnes.jpg"/>
+					<p>Carnes</p>
+				</ion-col>
+
+				<ion-col width-25 (click)="onDetail('pescados','Pescados y Mariscos')">
+					<img src="assets/img/roomservice_pescados.jpg"/>
+					<p>Pescados y Mariscos</p>
+				</ion-col>
+
+				<ion-col width-25 (click)="onDetail('pizzas','Pizzas')">
+					<img src="assets/img/roomservice_pizzas.jpg"/>
+					<p>Pizzas</p>
+				</ion-col>
+
+				<ion-col width-25 (click)="onDetail('sandwich','Sandwich')">
+					<img src="assets/img/roomservice_sandwich2.jpg"/>
+					<p>Sandwichs</p>
+				</ion-col>
+
+				<ion-col width-25 (click)="onDetail('bebidas','Jusgos Naturales, Cafe, Gaseosas')">
+					<img src="assets/img/roomservice_bebidas.jpg"/>
+					<p>Bebidas</p>			
+				</ion-col>
+
+				<ion-col width-25 (click)="onDetail('licores','Licores Nacionales e Internacionales')">
+					<img src="assets/img/roomservice_licores.jpg"/>
+					<p>Bebidas Alcoholicas</p>
+				</ion-col>  
+
+				<ion-col width-25 (click)="onDetail('vinos','Vinos')">
+					<img src="assets/img/roomservice_vinos.jpg"/>
+					<p>Vinos</p>
+				</ion-col>
+				
+				<ion-col width-25 (click)="onDetail('postres','Postres')">
+					<img src="assets/img/roomservice_postres.jpg"/>
+					<p>Postres</p>
+				</ion-col>
+
+				<ion-col width-25 (click)="onDetail('snacks','Snacks')">
+					<img src="assets/img/roomservice_snacks.jpg"/>
+					<p>Snacks</p>
+				</ion-col>
+
+		</ion-row>
+        
+    </div>    
+
+    <div *ngIf="segmentvalue=='orden'">
+		<z-pageroomservicepedido [pedido]="pedidoactual"></z-pageroomservicepedido>
+    </div>
+
+</ion-content>

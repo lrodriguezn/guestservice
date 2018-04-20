@@ -1,0 +1,59 @@
+  <div *ngIf="viewcard" style="padding: 10px 10px;"> 
+      <ion-card class="blurred-title-card">
+        <div class="card-image" [style.background-image]="'url(' + enterprise.urlImage + ')'" ></div>
+
+        <div style="margin:5px">
+            <p class="titulo">{{enterprise.name}}</p>
+            <p class="parrafo">{{enterprise.city + ',' +  enterprise.country}} </p>
+            <p class="parrafo">{{enterprise.address}} </p>      
+        </div>
+
+        <ion-row wrap>
+          <ion-col *ngFor="let button of buttons">
+            <button ion-button 
+                    icon-left 
+                    small={{button.isSmall}} 
+                    clear={{button.isClear}}
+                    color="{{button.color}}" 
+                    (click)="Enterpriseclick(button)">
+              <ion-icon name="{{button.icon}}"></ion-icon>
+              {{button.key_translate  | translate}}
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+      
+  </div>
+
+    <div *ngIf="!viewcard" style="margin: 0; padding: 0px;">
+      <ion-list style="margin: 0; padding: 0px;">
+        <ion-item>
+          <ion-thumbnail item-left>
+              <img src="{{enterprise.urlImage}}"/>
+          </ion-thumbnail>          
+          
+<!--      <ion-avatar item-left>
+            <img src="{{enterprise.urlImage}}"/>
+          </ion-avatar>
+-->
+            <p class="titulo">{{enterprise.name}}</p>
+            <p class="parrafo">{{enterprise.city + ',' +  enterprise.country}} </p>
+            <p class="parrafo">{{enterprise.address}} </p>
+
+          <ion-row wrap>
+            <ion-col *ngFor="let button of buttons">
+              <button ion-button 
+                      icon-left 
+                      small={{button.isSmall}} 
+                      clear={{button.isClear}}
+                      color="{{button.color}}" 
+                      (click)="Enterpriseclick(button)">
+                <ion-icon name="{{button.icon}}"></ion-icon>
+                {{button.key_translate  | translate}}
+              </button>
+            </ion-col>
+          </ion-row>
+             
+        </ion-item>
+      </ion-list>
+    </div>
